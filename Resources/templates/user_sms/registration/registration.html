@@ -1,0 +1,21 @@
+{% extends "user_sms/base.html" %}
+
+{% block breadcrumbs %}
+    {% set breadcrumbs = [['name' => 'Регистрация']] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="b-wrapper">
+        <div class="b-row">
+            <div class="b-col b-col_small_6">
+                <h1 class="b-title">Регистрация</h1>
+
+                {{ form_render(form)|safe }}
+            </div>
+            <div class="b-col b-col_small_6">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing
+        http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="user_sms_registration_sms_confirm"
+           path="/registration/confirm/{phone}">
+        <default key="_controller">UserSmsBundle:Registration:confirm</default>
+        <requirement key="phone">\d+</requirement>
+    </route>
+
+    <route id="user_sms_set_password"
+           path="/set_password/{token}">
+        <default key="_controller">UserSmsBundle:Password:set</default>
+        <requirement key="token">\d+</requirement>
+    </route>
+
+    <route id="user_sms_change_password"
+           path="/change_password">
+        <default key="_controller">UserSmsBundle:Password:change</default>
+    </route>
+
+    <route id="user_sms_registration"
+           path="/registration">
+        <default key="_controller">UserSmsBundle:Registration:registration</default>
+    </route>
+
+    <route id="user_sms_login"
+           path="/login">
+        <default key="_controller">UserSmsBundle:Auth:login</default>
+    </route>
+
+    <route id="user_sms_logout"
+           path="/logout">
+        <default key="_controller">UserSmsBundle:Auth:logout</default>
+    </route>
+
+    <route id="user_sms_lost_password"
+           path="/lost_password">
+        <default key="_controller">UserSmsBundle:LostPassword:lost</default>
+    </route>
+
+    <route id="user_sms_lost_password_confirm"
+           path="/lost_password/{token}">
+        <default key="_controller">UserSmsBundle:LostPassword:confirm</default>
+        <requirement key="token">\d+</requirement>
+    </route>
+
+    <route id="user_sms_profile"
+           path="/profile">
+        <default key="_controller">UserSmsBundle:Profile:view</default>
+    </route>
+
+</routes>

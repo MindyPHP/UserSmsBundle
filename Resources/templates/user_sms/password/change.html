@@ -1,0 +1,32 @@
+{% extends "user/base.html" %}
+
+{% block breadcrumbs %}
+    {% set breadcrumbs = [
+    ['name' => 'Личный кабинет', 'url' => url('shop_order_list')],
+    ['name' => 'Изменение пароля']
+    ] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="b-row">
+        <div class="b-col b-col_small_12">
+            <h1 class="b-title">Изменение пароля</h1>
+
+            {{ form_start(form)|safe }}
+            <div class="b-form__row">
+                <div class="b-input">
+                    {{ form_label(form.children.password.children.first, null, ['label_attr' => ['class' => 'b-input__label']])|safe }}
+                    {{ form_widget(form.children.password.children.first, ['attr' => ['class' => 'b-input__input']])|safe }}
+                </div>
+            </div>
+            <div class="b-form__row">
+                <div class="b-input">
+                    {{ form_label(form.children.password.children.second, null, ['label_attr' => ['class' => 'b-input__label']])|safe }}
+                    {{ form_widget(form.children.password.children.second, ['attr' => ['class' => 'b-input__input']])|safe }}
+                </div>
+            </div>
+            {{ form_end(form)|safe }}
+        </div>
+    </div>
+{% endblock %}

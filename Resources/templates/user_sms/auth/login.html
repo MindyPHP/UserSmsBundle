@@ -1,0 +1,40 @@
+{% extends "user_sms/base.html" %}
+
+{% block breadcrumbs %}
+    {% set breadcrumbs = [
+    ['name' => 'Вход']
+    ] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="b-wrapper">
+        <div class="b-row">
+            <div class="b-col b-col_small_6">
+                <h1 class="b-title">Вход</h1>
+
+                {% if error %}
+                    <div class="b-login__error">
+                        <h3 class="b-login__error-title">Пожалуйста исправьте ошибки:</h3>
+                        {{ error.getMessage() }}
+                    </div>
+                {% endif %}
+
+                {{ form_start(form)|safe }}
+                {{ form_row(form.children._username)|safe }}
+                {{ form_row(form.children._password)|safe }}
+                <div class="b-group">
+                    <div class="b-input-group">
+                        {{ form_row(form.children.submit, ['attr' => ['class' => 'b-button_primary']])|safe }}
+                    </div>
+                    <div class="b-input-group">
+                        <a class="b-button" href="{{ url('user_sms_registration') }}">Регистрация</a>
+                        <a class="b-button" href="{{ url('user_sms_lost_password') }}">Забыли пароль?</a>
+                    </div>
+                </div>
+                {{ form_end(form)|safe }}
+            </div>
+            <div class="b-col b-col_small_6">&nbsp;</div>
+        </div>
+    </div>
+{% endblock %}

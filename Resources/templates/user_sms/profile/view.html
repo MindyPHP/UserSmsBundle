@@ -1,0 +1,29 @@
+{% extends "user_sms/base.html" %}
+
+{% block breadcrumbs %}
+    {% set breadcrumbs = [['name' => 'Личный кабинет']] %}
+    {% parent %}
+{% endblock %}
+
+{% block content %}
+    <div class="b-wrapper">
+        <div class="b-row">
+            <div class="b-col b-col_small_12">
+                <h1 class="b-heading">Личный кабинет</h1>
+
+                <div class="b-tab">
+                    <div class="b-tab__header">
+                        <div data-tab="stats" class="b-tab__tab b-tab__tab_active">Статистика</div>
+                        <div data-tab="objects" class="b-tab__tab">Мои объекты</div>
+                        <div data-tab="filters" class="b-tab__tab">Сохраненные фильтры</div>
+                        <div data-tab="settings" class="b-tab__tab">Настройки</div>
+                    </div>
+                    <div data-tab="stats" class="b-tab__content b-tab__content_active">This is tab one</div>
+                    <div data-tab="objects" class="b-tab__content">This is tab two</div>
+                    <div data-tab="filters" class="b-tab__content">This is tab two</div>
+                    <div data-tab="settings" class="b-tab__content">This is tab two</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

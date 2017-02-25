@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="mindy.bundle.user_sms.event_listener.user"
+                 class="Mindy\Bundle\UserSmsBundle\EventListener\UserListener">
+            <argument type="service" id="sms_spool"/>
+            <tag name="kernel.event_listener" event="user.lost_password" method="onUserLostPassword" />
+            <tag name="kernel.event_listener" event="user.registered" method="onUserRegistered" />
+        </service>
+
+        <service id="mindy.bundle.user_sms.provider.user"
+                 class="Mindy\Bundle\UserSmsBundle\Provider\UserProvider"/>
+    </services>
+</container>
